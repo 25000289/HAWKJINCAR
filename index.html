@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAWKJIN - Informe Técnico Integral de Ingeniería | UPB</title>
+    <title>HAWKJIN - Informe Integral de Ingeniería | UPB</title>
     <style>
         :root {
             --bg-color: #0b0f19;
@@ -63,6 +63,20 @@
             font-size: 1.15rem;
             margin-top: 0;
             font-weight: 300;
+        }
+
+        .slogan-banner {
+            width: 100%;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .slogan-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         .container {
@@ -224,210 +238,199 @@
             <img src="logo_hawkjin.png" alt="Escudería HAWKJIN">
         </div>
         <h1>ESCUDERÍA HAWKJIN</h1>
-        <p class="subtitle">Universidad Politécnica Bicentenario | Memoria Técnica e Informe General de Ingeniería</p>
+        <p class="subtitle">Universidad Politécnica Bicentenario | Memoria Técnica e Informe de Ingeniería</p>
     </header>
 
     <div class="container">
 
+        <!-- BANNER OFICIAL -->
+        <div class="slogan-banner">
+            <img src="banner_hawkjin.png" alt="Diseñado para competir. Construido para resistir. Pensado para ganar. #CORECAMOVIL2026">
+        </div>
+
         <!-- RESUMEN EJECUTIVO -->
         <section class="card">
             <h2>📜 1. Resumen Ejecutivo y Alcance del Proyecto</h2>
-            <p>El proyecto <strong>HAWKJIN</strong> comprende la investigación, conceptualización, diseño asistido por computadora (CAD), análisis aerodinámico mediante simulación numérica (CFD) y la evaluación ergonómica postural (RULA) para la construcción de un vehículo monoplaza de competición/pruebas en la Universidad Politécnica Bicentenario.</p>
-            <p>A lo largo del proceso de desarrollo, el equipo integró normativas técnicas y estándares de diseño industrial para asegurar un chasis estructuralmente eficiente, con un comportamiento aerodinámico controlado y una cabina ajustada a la antropometría del piloto.</p>
+            <p>El proyecto <strong>HAWKJIN</strong> comprende la investigación, conceptualización, diseño asistido por computadora (CAD), arquitectura electrónica/módulo mecatrónico, análisis aerodinámico mediante simulación numérica (CFD) y la evaluación ergonómica postural (RULA) para la construcción de un vehículo monoplaza de competición en la Universidad Politécnica Bicentenario.</p>
+            <p>A lo largo del desarrollo, el equipo integró normativas técnicas, electrónica embebida (ESP32) y estándares ergonómicos para asegurar un chasis estructuralmente eficiente, con potencia de tracción adecuada y un habitáculo ergonómico ajustado al piloto.</p>
 
             <div class="grid-3">
                 <div class="metric-card">
-                    <span class="badge badge-info">Fase CAD</span>
-                    <h4 style="margin: 0.5rem 0 0 0;">Geometría 3D</h4>
-                    <p style="font-size: 0.85rem; color: var(--text-sub); margin: 0;">Diseño monolítico paramétrico completado e integrado a ensamblaje general.</p>
+                    <span class="badge badge-info">Mecatrónica</span>
+                    <h4 style="margin: 0.5rem 0 0 0;">Control ESP32</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-sub); margin: 0;">Puente H, Batería 21V y 4x Motores DC de 12V.</p>
                 </div>
                 <div class="metric-card">
-                    <span class="badge badge-warning">Fase Simulación</span>
-                    <h4 style="margin: 0.5rem 0 0 0;">Dinámica CFD</h4>
-                    <p style="font-size: 0.85rem; color: var(--text-sub); margin: 0;">Evaluación de arrastre (Cd ≈ 0.72) e identificación de zonas de turbulencia.</p>
+                    <span class="badge badge-warning">Simulación CFD</span>
+                    <h4 style="margin: 0.5rem 0 0 0;">Dinámica Fluida</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-sub); margin: 0;">Coeficiente Cd ≈ 0.72 evaluado en túnel virtual.</p>
                 </div>
                 <div class="metric-card">
-                    <span class="badge badge-success">Fase Biomecánica</span>
+                    <span class="badge badge-success">Ergonomía</span>
                     <h4 style="margin: 0.5rem 0 0 0;">Método RULA</h4>
-                    <p style="font-size: 0.85rem; color: var(--text-sub); margin: 0;">Nivel de Actuación 2 (Riesgo Medio): Carga física optimizada.</p>
+                    <p style="font-size: 0.85rem; color: var(--text-sub); margin: 0;">Nivel de Actuación 2 (Riesgo Medio): Ángulos de confort optimizados[cite: 1].</p>
                 </div>
             </div>
         </section>
 
         <!-- CRONOGRAMA DE TRABAJO REALIZADO -->
         <section class="card">
-            <h2>📅 2. Metodología y Fases Ejecutadas Hasta el Momento</h2>
-            <p>Para garantizar un desarrollo sistemático, se dividió la ejecución del vehículo en fases clave de ingeniería:</p>
-
+            <h2>📅 2. Metodología y Fases Ejecutadas</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <h4 style="margin: 0; color: var(--primary);">Fase I: Definición de Parámetros y Levantamiento Antropométrico</h4>
-                    <p style="font-size: 0.9rem; margin: 0.2rem 0 0 0;">Definición de las dimensiones del piloto objetivo y restricciones del reglamento técnico de la competencia universitaria.</p>
+                    <h4 style="margin: 0; color: var(--primary);">Fase I: Análisis Antropométrico y Dimensionamiento</h4>
+                    <p style="font-size: 0.9rem; margin: 0.2rem 0 0 0;">Definición de cotas críticas (altura de asiento de 69 cm, ancho de hombros de 43 cm) y rangos posturales de confort.</p>
                 </div>
                 <div class="timeline-item">
-                    <h4 style="margin: 0; color: var(--primary);">Fase II: Modelado CAD 3D y Ensamblaje Estructural</h4>
-                    <p style="font-size: 0.9rem; margin: 0.2rem 0 0 0;">Generación de la carrocería cerrada prismática, adaptación de ruedas todoterreno de alto agarre y ubicación del visor frontal.</p>
+                    <h4 style="margin: 0; color: var(--primary);">Fase II: Arquitectura Mecatrónica y Hardware Integrado</h4>
+                    <p style="font-size: 0.9rem; margin: 0.2rem 0 0 0;">Selección de microcontrolador ESP32, actuadores de 12V DC, etapas de potencia Puente H y alimentación de 21V.</p>
                 </div>
                 <div class="timeline-item">
-                    <h4 style="margin: 0; color: var(--primary);">Fase III: Simulación Aerodinámica Computacional (CFD)</h4>
-                    <p style="font-size: 0.9rem; margin: 0.2rem 0 0 0;">Creación del túnel de viento virtual para determinar vectores de velocidad, presiones estáticas y coeficiente de resistencia al avance.</p>
+                    <h4 style="margin: 0; color: var(--primary);">Fase III: Modelado CAD 3D y Aerodinámica CFD</h4>
+                    <p style="font-size: 0.9rem; margin: 0.2rem 0 0 0;">Construcción del modelo volumétrico y simulación de resistencia aerodinámica al avance.</p>
                 </div>
                 <div class="timeline-item">
-                    <h4 style="margin: 0; color: var(--primary);">Fase IV: Evaluación Ergonómica Postural Individual (RULA)</h4>
-                    <p style="font-size: 0.9rem; margin: 0.2rem 0 0 0;">Estudio riguroso del habitáculo evaluando ángulos articulares en brazos, cuello, tronco y extremidades inferiores[cite: 1].</p>
+                    <h4 style="margin: 0; color: var(--primary);">Fase IV: Evaluación Ergonómica Postural (RULA)</h4>
+                    <p style="font-size: 0.9rem; margin: 0.2rem 0 0 0;">Estudio biomecánico para el piloto Fabián Cruz Clemente (Evaluador: José Emmanuel Martínez Chávez)[cite: 1].</p>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN 1: DISEÑO CAD Y ESPECIFICACIONES -->
+        <!-- SECCIÓN DE MECATRÓNICA Y SISTEMA ELECTRÓNICO -->
         <section class="card">
-            <h2>🏎️ 3. Diseños CAD y Especificaciones Técnicas del Vehículo</h2>
-            <p>El diseño exterior fue configurado con una carrocería envolvente que busca proteger al conductor contra elementos externos, mientras que las líneas inclinadas del frente permiten una transición limpia del aire. Se seleccionaron neumáticos de banda profunda montados sobre rines reforzados para soportar esfuerzos laterales en curvas.</p>
+            <h2>⚡ 3. Arquitectura Mecatrónica y Diagrama de Potencia</h2>
+            <p>El sistema de propulsión y control electrónico se basa en una topología distribuida de tracción en las cuatro ruedas impulsada por motores DC individuales, gestionados mediante señales PWM de alta velocidad desde el microcontrolador ESP32.</p>
             
             <div class="img-container">
-                <img src="render_vehiculo.png" alt="Modelado CAD 3D del Vehículo HAWKJIN">
+                <img src="esquema_hardware.png" alt="Arquitectura Mecatrónica - ESP32, Batería 21V, Puente H y Motores DC">
             </div>
 
-            <h3>📊 Matriz de Especificaciones Dimensionales</h3>
+            <h3>📊 Ficha de Componentes Hardware</h3>
             <table>
                 <thead>
                     <tr>
-                        <th>Componente / Sistema</th>
+                        <th>Módulo / Componente</th>
                         <th>Especificación Técnica</th>
-                        <th>Estado de Validación</th>
+                        <th>Función en el Vehículo</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Carrocería Principal</strong></td>
-                        <td>Estructura monolítica de geometría prismática con frontal inclinado</td>
-                        <td><span class="badge badge-success">Concluido</span></td>
+                        <td><strong>Microcontrolador Principal</strong></td>
+                        <td>ESP32 (Dual Core, Wi-Fi / Bluetooth)</td>
+                        <td>Procesamiento de mandos y modulación PWM</td>
                     </tr>
                     <tr>
-                        <td><strong>Tren de Rodaje</strong></td>
-                        <td>4 Neumáticos de tracción mixta con rines deportivos reforzados</td>
-                        <td><span class="badge badge-success">Concluido</span></td>
+                        <td><strong>Módulo de Potencia</strong></td>
+                        <td>Driver de Motor Puente H (H-Bridge)</td>
+                        <td>Inversión de giro y control de velocidad</td>
                     </tr>
                     <tr>
-                        <td><strong>Visor de Conducción</strong></td>
-                        <td>Pantalla frontal angular transparente en policarbonato</td>
-                        <td><span class="badge badge-info">En Proceso</span></td>
+                        <td><strong>Fuente de Alimentación</strong></td>
+                        <td>Batería de Li-Ion 21V</td>
+                        <td>Suministro de energía general del sistema</td>
                     </tr>
                     <tr>
-                        <td><strong>Configuración de Asiento</strong></td>
-                        <td>Habitáculo recostado para disminución del área frontal expuesta</td>
-                        <td><span class="badge badge-success">Concluido</span></td>
+                        <td><strong>Actuadores de Tracción</strong></td>
+                        <td>4 Motores DC de 12V con Reductora</td>
+                        <td>Transmisión directa a neumáticos de goma</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Neumáticos</strong></td>
+                        <td>Llantas de goma (<i>Rubber Tires</i>) de alto agarre</td>
+                        <td>Tracción y absorción de impacto superficial</td>
                     </tr>
                 </tbody>
             </table>
         </section>
 
-        <!-- SECCIÓN 2: AERODINÁMICA CFD -->
+        <!-- SECCIÓN CAD Y AERODINÁMICA -->
         <section class="card">
-            <h2>💨 4. Análisis de Dinámica de Fluidos Computacional (CFD)</h2>
-            <p>El análisis CFD permitió estudiar la interacción entre el fluido (aire) y las superficies externas del carro. La simulación identifica que la mayor acumulación de presión se concentra en el plano inclinado del frente, generando una estela de turbulencia controlada en la sección trasera.</p>
-            
-            <div class="img-container">
-                <img src="estudio_aerodinamica.png" alt="Análisis Aerodinámico CFD HAWKJIN">
-            </div>
+            <h2>🏎️ 4. Diseños CAD 3D y Análisis Aerodinámico (CFD)</h2>
+            <p>La estructura del vehículo cuenta con un chasis monolítico de líneas sobrias para optimizar el paso del aire. En las pruebas de túnel de viento computacional (CFD) se obtuvo un coeficiente de arrastre de <strong>Cd ≈ 0.72</strong>.</p>
 
             <div class="grid-2">
-                <div class="metric-card">
-                    <h3 style="margin-top: 0;">📉 Resultados del Flujo Aerodinámico</h3>
-                    <div class="metric-value">Cd ≈ 0.72</div>
-                    <p style="font-size: 0.85rem; color: var(--text-sub);">Coeficiente de arrastre dentro del margen esperado para geometrías cerradas protectoras tipo prototipo.</p>
+                <div class="img-container">
+                    <img src="render_vehiculo.png" alt="Render CAD 3D del Prototipo HAWKJIN">
                 </div>
-
-                <div class="metric-card">
-                    <h3 style="margin-top: 0;">🛠️ Recomendaciones de Rediseño Futuro</h3>
-                    <ul style="font-size: 0.9rem; padding-left: 1.2rem; margin: 0; color: #cbd5e1;">
-                        <li><strong>Suavizado de Aristas Frontales:</strong> Redondear las uniones de la nariz para evitar la separación prematura de la capa límite.</li>
-                        <li><strong>Carenados de Ruedas:</strong> Integrar deflectores en los arcos de las ruedas para reducir la turbulencia rotacional.</li>
-                        <li><strong>Inclinación del Techo:</strong> Generar una caída tipo <i>fastback</i> en la parte posterior para mitigar la succión trasera.</li>
-                    </ul>
+                <div class="img-container">
+                    <img src="estudio_aerodinamica.png" alt="Simulación de Presión Aerodinámica CFD">
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN 3: ERGONOMÍA Y EVALUACIÓN BIOMECÁNICA -->
+        <!-- SECCIÓN ERGONOMÍA Y ANTROPOMETRÍA -->
         <section class="card">
-            <h2>🧘‍♂️ 5. Estudio Ergonómico Individual (Método RULA)</h2>
-            <p>A través del software especializado Ergonautas, se realizó la evaluación ergonómica individual para el puesto de <strong>Piloto de Carreras</strong>, determinando el impacto del diseño de la postura sobre la salud y comodidad del usuario[cite: 1].</p>
+            <h2>🧘‍♂️ 5. Estudio Ergonómico y Dimensiones Antropométricas</h2>
+            <p>Se integraron esquemas geométricos detallados para validar que el habitáculo mantenga rangos articulares cómodos durante la conducción prolongada[cite: 1].</p>
 
+            <div class="grid-2">
+                <div class="img-container">
+                    <img src="dimensiones_asiento.png" alt="Dimensiones Antropométricas del Asiento">
+                </div>
+                <div class="img-container">
+                    <img src="angulos_confort.png" alt="Ángulos y Rangos de Confort para Conducción">
+                </div>
+            </div>
+
+            <h3>📐 Dimensionamiento Crítico del Habitáculo</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parámetro Antropométrico</th>
+                        <th>Dimensión Nominal</th>
+                        <th>Criterio de Confort</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Altura Total Cabina</strong></td>
+                        <td>88 cm (34.6")</td>
+                        <td>Espacio despejado para casco de seguridad</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Altura del Respaldo</strong></td>
+                        <td>69 cm (27.2")</td>
+                        <td>Soporte cervical y torácico completo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ancho y Profundidad del Asiento</strong></td>
+                        <td>43 cm × 46 cm</td>
+                        <td>Distribución de presión en muslos y glúteos</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ancho de Hombros y Caderas</strong></td>
+                        <td>43 cm (16.9" / 1.4")</td>
+                        <td>Sujeción lateral sin restricción de movimiento</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Altura del Asiento al Piso</strong></td>
+                        <td>45 cm (18.5")</td>
+                        <td>Ángulo de rodilla óptimo para pedaleras</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>📊 Resultados de la Evaluación RULA (Ergonautas)</h3>
             <table>
                 <tr>
                     <td><strong>Piloto Evaluado:</strong> Fabián Cruz Clemente (20 años)[cite: 1]</td>
-                    <td><strong>Puesto / Función:</strong> Piloto de Competición[cite: 1]</td>
+                    <td><strong>Evaluador:</strong> José Emmanuel Martínez Chávez[cite: 1]</td>
                 </tr>
                 <tr>
-                    <td><strong>Evaluador Responsable:</strong> José Emmanuel Martínez Chávez[cite: 1]</td>
-                    <td><strong>Institución:</strong> Universidad Politécnica Bicentenario[cite: 1]</td>
-                </tr>
-                <tr>
-                    <td><strong>Jornada Estimada:</strong> 1 hora por sesión / 4 horas totales[cite: 1]</td>
-                    <td><strong>Condiciones:</strong> Ruido, vibración y uso de EPP (casco/traje)[cite: 1]</td>
+                    <td><strong>Puntuación Final RULA:</strong> 3 (Riesgo Medio)[cite: 1]</td>
+                    <td><strong>Nivel de Actuación:</strong> Nivel 2 (Cambios recomendados)[cite: 1]</td>
                 </tr>
             </table>
-
-            <div class="grid-3" style="text-align: center; margin-top: 1.5rem;">
-                <div class="metric-card" style="border-left: 4px solid var(--accent);">
-                    <h4 style="margin: 0; color: var(--text-sub);">Puntuación Final RULA</h4>
-                    <div class="metric-value">3</div>
-                    <span class="badge badge-warning">Riesgo Medio</span>[cite: 1]
-                </div>
-
-                <div class="metric-card" style="border-left: 4px solid var(--primary);">
-                    <h4 style="margin: 0; color: var(--text-sub);">Nivel de Actuación</h4>
-                    <div class="metric-value" style="color: var(--primary);">Nivel 2</div>
-                    <span style="font-size: 0.8rem; color: var(--text-sub);">Pueden requerirse cambios menores</span>[cite: 1]
-                </div>
-
-                <div class="metric-card" style="border-left: 4px solid var(--success);">
-                    <h4 style="margin: 0; color: var(--text-sub);">Carga &amp; Actividad</h4>
-                    <div style="font-size: 1.3rem; font-weight: bold; color: var(--success); margin: 0.6rem 0;">Dinámica / &lt; 2 kg</div>
-                    <span style="font-size: 0.8rem; color: var(--text-sub);">Esfuerzo muscular intermitente</span>[cite: 1]
-                </div>
-            </div>
-
-            <h3>🔍 Desglose Técnico por Extremidades y Zonas Corporales</h3>
-            <div class="grid-2">
-                <div class="metric-card">
-                    <h4 style="color: var(--primary); margin-top: 0;">💪 Grupo A: Miembros Superiores (Puntuación: 2)</h4>
-                    <ul style="font-size: 0.9rem; padding-left: 1.2rem; color: #cbd5e1; margin: 0;">
-                        <li><strong>Brazo (Puntuación 2):</strong> Flexión/extensión neutra con leve abducción postural[cite: 1].</li>
-                        <li><strong>Antebrazo (Puntuación 1):</strong> Ámbitos de flexión óptimos entre 60° y 100°[cite: 1].</li>
-                        <li><strong>Muñeca (Puntuación 1):</strong> Alineación en posición neutra[cite: 1].</li>
-                        <li><strong>Giro de Muñeca (Puntuación 1):</strong> Pronación/supinación en rango medio sin tensión[cite: 1].</li>
-                    </ul>
-                </div>
-
-                <div class="metric-card">
-                    <h4 style="color: var(--primary); margin-top: 0;">🧍‍♂️ Grupo B: Cuello, Tronco y Piernas (Puntuación: 3)</h4>
-                    <ul style="font-size: 0.9rem; padding-left: 1.2rem; color: #cbd5e1; margin: 0;">
-                        <li><strong>Tronco (Puntuación 3):</strong> Flexión acentuada en el asiento entre 21° y 60°[cite: 1].</li>
-                        <li><strong>Cuello (Puntuación 1):</strong> Ángulo de visión confortable con flexión de 0° a 10°[cite: 1].</li>
-                        <li><strong>Piernas (Puntuación 1):</strong> Posición reclinada estable con pies apoyados firmemente[cite: 1].</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div style="background: #0f172a; padding: 1.2rem; border-radius: 8px; margin-top: 1.5rem; border: 1px solid var(--border-color);">
-                <h4 style="margin-top: 0; color: var(--accent);">📌 Conclusión del Diagnóstico Ergonómico</h4>
-                <p style="font-size: 0.9rem; margin-bottom: 0; color: #cbd5e1;">
-                    El estudio determinó un <strong>Nivel de Actuación 2</strong>[cite: 1]. La postura actual del piloto es segura y no genera fatiga muscular inmediata. Se recomienda incorporar un apoyo anatómico en la zona lumbar para corregir levemente la flexión del tronco y asegurar el máximo confort durante jornadas extensas en pista.
-                </p>
-            </div>
         </section>
 
         <!-- PRÓXIMOS PASOS -->
         <section class="card">
-            <h2>🚀 6. Próximos Pasos y Plan de Manufactura</h2>
-            <p>Con la etapa virtual totalmente validada (CAD + CFD + RULA), el proyecto entra a su fase de manufactura física y pruebas de campo:</p>
+            <h2>🚀 6. Próximos Pasos del Equipo</h2>
             <ul style="color: #cbd5e1; padding-left: 1.5rem;">
-                <li><strong>Corte y Ensamble del Chasis:</strong> Selección de tubería y perfiles de acero para el armazón de soporte.</li>
-                <li><strong>Modelado de la Fibra/Carrocería:</strong> Fabricación del molde para los paneles basándose en la geometría CAD validada.</li>
-                <li><strong>Instalación del Cockpit Personalizado:</strong> Montaje de asiento ergonómico con el soporte lumbar recomendado.</li>
-                <li><strong>Pruebas Dinámicas en Pista:</strong> Pruebas físicas de aceleración, frenado y medición de temperaturas del piloto.</li>
+                <li><strong>Ensamble de Tarjeta de Control:</strong> Integración física de la PCB para el ESP32 y Puente H.</li>
+                <li><strong>Fabricación del Chasis y Fibra:</strong> Conformado estructural acorde a las cotas del modelo CAD.</li>
+                <li><strong>Pruebas de Pista #CORECAMOVIL2026:</strong> Calibración de respuesta de motores y monitoreo de temperatura.</li>
             </ul>
         </section>
 
@@ -435,8 +438,8 @@
 
     <!-- PIE DE PÁGINA -->
     <footer>
-        <p><strong>Escudería HAWKJIN</strong> &copy; 2026 — Proyecto Desarrollado en la Universidad Politécnica Bicentenario</p>
-        <p style="font-size: 0.8rem; color: #64748b; margin-top: 0.5rem;">Memoria Técnica de Ingeniería | Publicado en GitHub Pages</p>
+        <p><strong>Escudería HAWKJIN</strong> &copy; 2026 — Universidad Politécnica Bicentenario</p>
+        <p style="font-size: 0.8rem; color: #64748b; margin-top: 0.5rem;">#HAWKJIN #CORECAMOVIL2026 | Documentación de Ingeniería</p>
     </footer>
 
 </body>
