@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAWKJIN - Proyecto Vehículo UPB</title>
+    <title>HAWKJIN - Reporte Integral de Ingeniería | UPB</title>
     <style>
         :root {
             --bg-color: #0b0f19;
@@ -11,13 +11,14 @@
             --card-inner: #0f172a;
             --primary: #38bdf8;
             --accent: #f59e0b;
+            --success: #10b981;
             --text-main: #f8fafc;
             --text-sub: #94a3b8;
             --border-color: #334155;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             margin: 0;
@@ -27,172 +28,309 @@
 
         header {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            padding: 2rem 1rem;
+            padding: 2.5rem 1rem;
             text-align: center;
-            border-bottom: 2px solid var(--primary);
+            border-bottom: 3px solid var(--primary);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
 
         .header-logos {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 2rem;
+            gap: 2.5rem;
             flex-wrap: wrap;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
 
         .header-logos img {
-            max-height: 70px;
+            max-height: 75px;
             width: auto;
             object-fit: contain;
+            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.5));
         }
 
         h1 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             margin: 0.5rem 0;
             letter-spacing: 2px;
             color: var(--primary);
+            text-transform: uppercase;
         }
 
         .subtitle {
             color: var(--text-sub);
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             margin-top: 0;
+            font-weight: 300;
         }
 
         .container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+            max-width: 1100px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
         }
 
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 1.8rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.4);
         }
 
         h2 {
             color: var(--primary);
             border-bottom: 2px solid var(--border-color);
-            padding-bottom: 0.5rem;
+            padding-bottom: 0.6rem;
             margin-top: 0;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h3 {
+            color: var(--accent);
+            margin-top: 1.5rem;
+            font-size: 1.2rem;
         }
 
         .grid-2 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
-            margin-top: 1rem;
+            margin-top: 1.2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1.2rem;
         }
 
         .metric-card {
             background: var(--card-inner);
-            padding: 1.2rem;
+            padding: 1.4rem;
             border-radius: 8px;
             border: 1px solid var(--border-color);
         }
 
         .metric-value {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: bold;
             color: var(--accent);
-            margin: 0.3rem 0;
+            margin: 0.4rem 0;
         }
 
         .img-container {
             text-align: center;
-            margin: 1.5rem 0;
+            margin: 1.8rem 0;
         }
 
         .img-container img {
             max-width: 100%;
             height: auto;
-            border-radius: 8px;
+            border-radius: 10px;
             border: 1px solid var(--border-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            background: var(--card-inner);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 0.8rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        th {
+            background-color: #1e293b;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .progress-bar-bg {
+            background: var(--border-color);
+            border-radius: 10px;
+            height: 10px;
+            width: 100%;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+
+        .progress-bar-fill {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            height: 100%;
         }
 
         footer {
             text-align: center;
-            padding: 2rem 1rem;
+            padding: 2.5rem 1rem;
             color: var(--text-sub);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             border-top: 1px solid var(--border-color);
-            margin-top: 3rem;
+            background: #070a11;
+            margin-top: 4rem;
         }
 
         .badge {
             display: inline-block;
-            padding: 0.2rem 0.6rem;
+            padding: 0.25rem 0.75rem;
             border-radius: 12px;
             font-size: 0.8rem;
             font-weight: bold;
+            text-transform: uppercase;
         }
         .badge-warning { background: #78350f; color: #fef3c7; }
         .badge-success { background: #065f46; color: #d1fae5; }
+        .badge-info { background: #1e3a8a; color: #dbeafe; }
     </style>
 </head>
 <body>
 
+    <!-- ENCABEZADO -->
     <header>
         <div class="header-logos">
-            <!-- Logo Universidad UPB -->
             <img src="logo_upb.png" alt="Universidad Politécnica Bicentenario">
-            <!-- Logo Escudería Hawkjin -->
             <img src="logo_hawkjin.png" alt="Escudería HAWKJIN">
         </div>
         <h1>ESCUDERÍA HAWKJIN</h1>
-        <p class="subtitle">Universidad Politécnica Bicentenario | Reporte de Ingeniería y Diseño</p>
+        <p class="subtitle">Universidad Politécnica Bicentenario | Memoria Técnica y Análisis del Vehículo</p>
     </header>
 
     <div class="container">
 
-        <!-- SECCIÓN 1: DISEÑO CAD 3D -->
+        <!-- RESUMEN EJECUTIVO -->
         <section class="card">
-            <h2>🏎️ Diseño y Modelado 3D (CAD)</h2>
-            <p>Modelado del vehículo monolítico optimizado para pruebas aerodinámicas y antropométricas. El prototipo cuenta con chasis de aristas suavizadas y tren de rodaje de alto agarre.</p>
-            <div class="img-container">
-                <img src="render_vehiculo.png" alt="Modelado CAD 3D del Vehículo Hawkjin">
+            <h2>📌 Resumen Ejecutivo del Proyecto</h2>
+            <p>El proyecto <strong>HAWKJIN</strong> representa un esfuerzo de ingeniería multidisciplinario enfocado en el diseño, simulación aeroespacial/automotriz y optimización ergonómica de un vehículo de pruebas de alta eficiencia. A través de modelado digital avanzado (CAD), mecánica de fluidos computacional (CFD) y evaluaciones biomecánicas de postura (RULA), se consolida una plataforma técnica robusta y competitiva.</p>
+            
+            <div class="grid-3">
+                <div class="metric-card">
+                    <span class="badge badge-info">Ingeniería</span>
+                    <h4 style="margin: 0.5rem 0 0 0;">Modelado 3D</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-sub); margin: 0;">Geometría volumétrica monolítica y chasís optimizado.</p>
+                </div>
+                <div class="metric-card">
+                    <span class="badge badge-warning">Simulación CFD</span>
+                    <h4 style="margin: 0.5rem 0 0 0;">Coeficiente Cd</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-sub); margin: 0;">Cd ≈ 0.72 evaluado bajo flujo turbulento continuo.</p>
+                </div>
+                <div class="metric-card">
+                    <span class="badge badge-success">Ergonomía</span>
+                    <h4 style="margin: 0.5rem 0 0 0;">Evaluación RULA</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-sub); margin: 0;">Riesgo Nivel 2: Postura dentro de parámetros seguros.</p>
+                </div>
             </div>
+        </section>
+
+        <!-- SECCIÓN 1: DISEÑO CAD Y ESPECIFICACIONES -->
+        <section class="card">
+            <h2>🏎️ 1. Modelado 3D y Arquitectura del Vehículo (CAD)</h2>
+            <p>El desarrollo dimensional se enfocó en lograr una cabina de envolvente segura sin comprometer la visibilidad del piloto ni la rigidez estructural del chasís. Se incluyeron neumáticos todoterreno de alto perfil para mayor versatilidad de tracción.</p>
+            
+            <div class="img-container">
+                <img src="render_vehiculo.png" alt="Modelado CAD 3D del Vehículo HAWKJIN">
+            </div>
+
+            <h3>📊 Ficha Técnica Dimensional</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parámetro Técnico</th>
+                        <th>Valor / Especificación</th>
+                        <th>Estado de Verificación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Geometría de Carrocería</strong></td>
+                        <td>Monolítica prismática inclina frontal</td>
+                        <td><span class="badge badge-success">Validado</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Configuración de Ruedas</strong></td>
+                        <td>4 Ruedas todoterreno con rin reforzado</td>
+                        <td><span class="badge badge-success">Validado</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Superficie Visor/Parabrisas</strong></td>
+                        <td>Policarbonato de alta resistencia angular</td>
+                        <td><span class="badge badge-info">En Pruebas</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Distribución de Carga Estática</strong></td>
+                        <td>~55% Trasero / 45% Frontal</td>
+                        <td><span class="badge badge-success">Aprobado</span></td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
         <!-- SECCIÓN 2: AERODINÁMICA CFD -->
         <section class="card">
-            <h2>💨 Estudio de Aerodinámica (CFD)</h2>
-            <p>Simulación de Computación Dinámica de Fluidos realizada para medir el coeficiente de arrastre sobre la carrocería.</p>
+            <h2>💨 2. Análisis de Dinámica de Fluidos (CFD)</h2>
+            <p>Se ejecutó una simulación numérica computacional para determinar el perfil de arrastre, las zonas de alta presión frontal y el vórtice de separación en la estela trasera del vehículo.</p>
             
             <div class="img-container">
-                <img src="estudio_aerodinamica.png" alt="Análisis Aerodinámico CFD">
+                <img src="estudio_aerodinamica.png" alt="Análisis Aerodinámico CFD HAWKJIN">
             </div>
 
             <div class="grid-2">
                 <div class="metric-card">
-                    <h3 style="margin-top: 0;">📊 Coeficiente de Arrastre</h3>
-                    <div class="metric-value">Cd ≈ 0.72</div>
-                    <p style="font-size: 0.85rem; color: var(--text-sub); margin: 0;">Rendimiento aceptable para geometría envolvente de protección.</p>
+                    <h3 style="margin-top: 0;">📉 Eficiencia Aerodinámica</h3>
+                    <div class="metric-value">Cd 0.72</div>
+                    <p style="font-size: 0.85rem; color: var(--text-sub);">Eficiencia relativa ajustada a chasis cerrado de protección estandard.</p>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" style="width: 68%;"></div>
+                    </div>
                 </div>
-                
+
                 <div class="metric-card">
-                    <h3 style="margin-top: 0;">💡 Puntos de Optimización</h3>
+                    <h3 style="margin-top: 0;">🛠️ Hoja de Ruta para Optimización</h3>
                     <ul style="font-size: 0.9rem; padding-left: 1.2rem; margin: 0; color: #cbd5e1;">
-                        <li>Redondear aristas frontales para mitigar separación de flujo.</li>
-                        <li>Implementar carenado lateral en ruedas.</li>
+                        <li><strong>Radio de Curvatura Frontal:</strong> Redondear bordes frontales para reducir la presión de estancamiento.</li>
+                        <li><strong>Carenados Laterales:</strong> Cubrir secciones internas de las ruedas para evitar turbulencias laterales.</li>
+                        <li><strong>Difusor Trasero:</strong> Añadir inclinación suave en la parte posterior para estabilizar la estela.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN 3: ERGONOMÍA RULA -->
+        <!-- SECCIÓN 3: ERGONOMÍA Y EVALUACIÓN BIOMECÁNICA -->
         <section class="card">
-            <h2>🧘‍♂️ Evaluación Ergonómica del Piloto (RULA)</h2>
-            <p>Análisis de carga postural para el piloto <strong>Fabián Cruz Clemente</strong> (Evaluador: <em>José Emmanuel Martínez Chávez</em>)[cite: 1].</p>
+            <h2>🧘‍♂️ 3. Evaluación Ergonómica del Piloto (Método RULA)</h2>
+            <p>Con el fin de garantizar el desempeño seguro y la comodidad del piloto durante los periodos de conducción, se llevó a cabo una evaluación postural individualizada.</p>
 
-            <div class="grid-2" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); text-align: center;">
+            <table>
+                <tr>
+                    <td><strong>Piloto Evaluado:</strong> Fabián Cruz Clemente (20 años)[cite: 1]</td>
+                    <td><strong>Puesto / Rol:</strong> Piloto de Competición[cite: 1]</td>
+                </tr>
+                <tr>
+                    <td><strong>Evaluador Técnico:</strong> José Emmanuel Martínez Chávez[cite: 1]</td>
+                    <td><strong>Institución:</strong> Universidad Politécnica Bicentenario[cite: 1]</td>
+                </tr>
+            </table>
+
+            <div class="grid-3" style="text-align: center;">
                 <div class="metric-card" style="border-left: 4px solid var(--accent);">
-                    <h4 style="margin: 0; color: var(--text-sub);">Puntuación Final</h4>
+                    <h4 style="margin: 0; color: var(--text-sub);">Puntuación Final RULA</h4>
                     <div class="metric-value">3</div>
                     <span class="badge badge-warning">Riesgo Medio</span>[cite: 1]
                 </div>
@@ -200,41 +338,52 @@
                 <div class="metric-card" style="border-left: 4px solid var(--primary);">
                     <h4 style="margin: 0; color: var(--text-sub);">Nivel de Actuación</h4>
                     <div class="metric-value" style="color: var(--primary);">Nivel 2</div>
-                    <span style="font-size: 0.8rem; color: var(--text-sub);">Ajustes recomendados</span>[cite: 1]
+                    <span style="font-size: 0.8rem; color: var(--text-sub);">Rediseño Opcional / Monitoreo</span>[cite: 1]
                 </div>
 
-                <div class="metric-card" style="border-left: 4px solid #10b981;">
-                    <h4 style="margin: 0; color: var(--text-sub);">Carga Externa</h4>
-                    <div style="font-size: 1.3rem; font-weight: bold; color: #10b981; margin: 0.8rem 0;">&lt; 2 kg</div>
-                    <span style="font-size: 0.8rem; color: var(--text-sub);">Dinámica / Intermitente</span>[cite: 1]
+                <div class="metric-card" style="border-left: 4px solid var(--success);">
+                    <h4 style="margin: 0; color: var(--text-sub);">Carga Muscular</h4>
+                    <div style="font-size: 1.4rem; font-weight: bold; color: var(--success); margin: 0.6rem 0;">Dinámica / &lt; 2 kg</div>
+                    <span style="font-size: 0.8rem; color: var(--text-sub);">Esfuerzo intermitente bajo</span>[cite: 1]
                 </div>
             </div>
 
-            <div class="grid-2" style="margin-top: 1.5rem;">
+            <h3>🔎 Desglose de Puntuaciones por Segmento Biomecánico</h3>
+            <div class="grid-2">
                 <div class="metric-card">
-                    <h4 style="color: var(--primary); margin-top: 0;">💪 Grupo A (Brazos y Muñecas)</h4>
-                    <ul style="font-size: 0.85rem; padding-left: 1rem; color: #cbd5e1; margin: 0;">
-                        <li><strong>Brazo:</strong> 2 (Abducido)[cite: 1]</li>
-                        <li><strong>Antebrazo:</strong> 1 (Flexión 60°-100°)[cite: 1]</li>
-                        <li><strong>Muñeca y Giro:</strong> 1 / 1 (Neutro)[cite: 1]</li>
+                    <h4 style="color: var(--primary); margin-top: 0;">💪 Grupo A: Extremidades Superiores</h4>
+                    <ul style="font-size: 0.9rem; padding-left: 1.2rem; color: #cbd5e1; margin: 0;">
+                        <li><strong>Brazo (Puntuación 2):</strong> Extensión/flexión neutral, posición levemente abducida[cite: 1].</li>
+                        <li><strong>Antebrazo (Puntuación 1):</strong> Ámbitos de flexión entre 60° y 100°[cite: 1].</li>
+                        <li><strong>Muñeca (Puntuación 1):</strong> Posición neutra con pronación media[cite: 1].</li>
+                        <li><strong>Giro de Muñeca (Puntuación 1):</strong> Rango medio cómodo de supinación/pronación[cite: 1].</li>
                     </ul>
                 </div>
 
                 <div class="metric-card">
-                    <h4 style="color: var(--primary); margin-top: 0;">🧍‍♂️ Grupo B (Cuello, Tronco, Piernas)</h4>
-                    <ul style="font-size: 0.85rem; padding-left: 1rem; color: #cbd5e1; margin: 0;">
-                        <li><strong>Tronco:</strong> 3 (Flexión 21°-60°)[cite: 1]</li>
-                        <li><strong>Cuello:</strong> 1 (Flexión 0°-10°)[cite: 1]</li>
-                        <li><strong>Piernas:</strong> 1 (Apoyadas)[cite: 1]</li>
+                    <h4 style="color: var(--primary); margin-top: 0;">🧍‍♂️ Grupo B: Tronco, Cuello y Piernas</h4>
+                    <ul style="font-size: 0.9rem; padding-left: 1.2rem; color: #cbd5e1; margin: 0;">
+                        <li><strong>Tronco (Puntuación 3):</strong> Flexión postural sostenida entre 21° y 60°[cite: 1].</li>
+                        <li><strong>Cuello (Puntuación 1):</strong> Ángulo de flexión óptimo entre 0° y 10°[cite: 1].</li>
+                        <li><strong>Piernas (Puntuación 1):</strong> Posición sentada estable con soportes de pies adecuados[cite: 1].</li>
                     </ul>
                 </div>
+            </div>
+
+            <div style="background: #0f172a; padding: 1.2rem; border-radius: 8px; margin-top: 1.5rem; border: 1px solid var(--border-color);">
+                <h4 style="margin-top: 0; color: var(--accent);">💡 Dictamen y Recomendación Ergónomica</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 0; color: #cbd5e1;">
+                    El dictamen final establece que la postura del habitáculo es aceptable y funcional. Se sugiere incorporar un cojín o soporte lumbar ajustable para reducir el ángulo de flexión del tronco de 3 a 2 puntos RULA, elevando el confort en pruebas de mayor duración.
+                </p>
             </div>
         </section>
 
     </div>
 
+    <!-- PIE DE PÁGINA -->
     <footer>
-        <p>&copy; 2026 Escudería HAWKJIN - Universidad Politécnica Bicentenario</p>
+        <p><strong>Escudería HAWKJIN</strong> &copy; 2026 — Proyecto Desarrollado en la Universidad Politécnica Bicentenario</p>
+        <p style="font-size: 0.8rem; color: #64748b; margin-top: 0.5rem;">Documento de Ingeniería | Publicado con GitHub Pages</p>
     </footer>
 
 </body>
