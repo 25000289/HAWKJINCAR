@@ -3,146 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corecamóvil - Vehículo RC con ESP-NOW</title>
+    <title>HAWKJIN - Proyecto Vehículo UPB</title>
     <style>
         :root {
-            --primary: #0070f3;
-            --bg: #0f172a;
+            --bg-color: #0b0f19;
             --card-bg: #1e293b;
-            --text: #f8fafc;
-            --accent: #22c55e;
+            --card-inner: #0f172a;
+            --primary: #38bdf8;
+            --accent: #f59e0b;
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+            --border-color: #334155;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
+            background-color: var(--bg-color);
+            color: var(--text-main);
             margin: 0;
             padding: 0;
             line-height: 1.6;
         }
 
         header {
-            background: linear-gradient(135deg, #1e1b4b, #0f172a);
-            padding: 3rem 1rem;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            padding: 2rem 1rem;
             text-align: center;
             border-bottom: 2px solid var(--primary);
         }
 
+        .header-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .header-logos img {
+            max-height: 70px;
+            width: auto;
+            object-fit: contain;
+        }
+
         h1 {
-            margin: 0;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
+            margin: 0.5rem 0;
+            letter-spacing: 2px;
             color: var(--primary);
         }
 
         .subtitle {
-            font-size: 1.2rem;
-            color: #94a3b8;
+            color: var(--text-sub);
+            font-size: 1.1rem;
+            margin-top: 0;
         }
 
         .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
 
         .card {
-            background: var(--card-bg);
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 1.8rem;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
         }
 
         h2 {
             color: var(--primary);
-            border-bottom: 1px solid #334155;
+            border-bottom: 2px solid var(--border-color);
             padding-bottom: 0.5rem;
+            margin-top: 0;
         }
 
-        ul {
-            padding-left: 1.2rem;
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
         }
 
-        li {
-            margin-bottom: 0.5rem;
-        }
-
-        .badge {
-            background-color: var(--accent);
-            color: #000;
-            padding: 0.2rem 0.6rem;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.85rem;
-        }
-
-        .code-block {
-            background: #090d16;
-            padding: 1rem;
+        .metric-card {
+            background: var(--card-inner);
+            padding: 1.2rem;
             border-radius: 8px;
-            overflow-x: auto;
-            font-family: monospace;
-            color: #38edf8;
-            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin: 0.3rem 0;
+        }
+
+        .img-container {
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+
+        .img-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
         }
 
         footer {
             text-align: center;
-            padding: 2rem;
-            color: #64748b;
+            padding: 2rem 1rem;
+            color: var(--text-sub);
             font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 3rem;
         }
+
+        .badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .badge-warning { background: #78350f; color: #fef3c7; }
+        .badge-success { background: #065f46; color: #d1fae5; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>🏎️ CORECAMÓVIL</h1>
-        <p class="subtitle">Vehículo Robótico Radiocontrolado por Wi-Fi de Baja Latencia (ESP-NOW)</p>
-        <span class="badge">Sistema de Seguridad Fail-Safe Activo</span>
+        <div class="header-logos">
+            <!-- Logo Universidad UPB -->
+            <img src="logo_upb.png" alt="Universidad Politécnica Bicentenario">
+            <!-- Logo Escudería Hawkjin -->
+            <img src="logo_hawkjin.png" alt="Escudería HAWKJIN">
+        </div>
+        <h1>ESCUDERÍA HAWKJIN</h1>
+        <p class="subtitle">Universidad Politécnica Bicentenario | Reporte de Ingeniería y Diseño</p>
     </header>
 
     <div class="container">
-        
-        <section class="card">
-            <h2>📌 Descripción del Proyecto</h2>
-            <p>El <strong>Corecamóvil</strong> es un vehículo todoterreno operado mediante un mando a distancia inalámbrico desarrollado sobre la arquitectura de microcontroladores <strong>ESP32</strong>. Utiliza el protocolo de comunicación peer-to-peer <strong>ESP-NOW</strong> de Espressif, garantizando una respuesta ultrarrápida sin necesidad de un enrutador o red Wi-Fi externa.</p>
-        </section>
 
+        <!-- SECCIÓN 1: DISEÑO CAD 3D -->
         <section class="card">
-            <h2>⚙️ Arquitectura de Hardware</h2>
-            <ul>
-                <li><strong>Control Transmisor (Mando):</strong> ESP32 + Joystick analógico de 2 ejes (X, Y).</li>
-                <li><strong>Receptor (Carro):</strong> ESP32 en modo estación con filtrado de paquetes.</li>
-                <li><strong>Etapa de Potencia:</strong> Configuración de Doble Puente H L298N independiente para balanceo de carga de corriente.</li>
-                <li><strong>Motores:</strong> 4 motores DC accionado por batería de alta potencia de 20V.</li>
-                <li><strong>Indicador Visual:</strong> LED integrado GPIO 2 para diagnóstico de estado de red.</li>
-            </ul>
-        </section>
-
-        <section class="card">
-            <h2>🛡️ Mecanismo de Seguridad (Fail-Safe)</h2>
-            <p>El vehículo cuenta con un algoritmo de protección ante pérdidas de señal:</p>
-            <div class="code-block">
-                // Timeout de seguridad en milisegundos<br>
-                if (conectado && (millis() - ultimaRecepcion > 1000)) {<br>
-                &nbsp;&nbsp;detenerMotores(); // Detención automática inmediata<br>
-                &nbsp;&nbsp;digitalWrite(LED_CONEXION, LOW);<br>
-                }
+            <h2>🏎️ Diseño y Modelado 3D (CAD)</h2>
+            <p>Modelado del vehículo monolítico optimizado para pruebas aerodinámicas y antropométricas. El prototipo cuenta con chasis de aristas suavizadas y tren de rodaje de alto agarre.</p>
+            <div class="img-container">
+                <img src="render_vehiculo.png" alt="Modelado CAD 3D del Vehículo Hawkjin">
             </div>
-            <p>Si la señal de comunicación con el mando se interrumpe por más de <strong>1 segundo</strong>, el receptor apaga automáticamente la tracción para prevenir colisiones.</p>
         </section>
 
+        <!-- SECCIÓN 2: AERODINÁMICA CFD -->
         <section class="card">
-            <h2>📶 Protocolo de Comunicación ESP-NOW</h2>
-            <p>A diferencia de los protocolos tradicionalmente usados como Bluetooth o Wi-Fi HTTP, ESP-NOW transmite tramas de datos crudas a nivel MAC, reduciendo la latencia de respuesta del vehículo a menos de <strong>5 milisegundos</strong>.</p>
+            <h2>💨 Estudio de Aerodinámica (CFD)</h2>
+            <p>Simulación de Computación Dinámica de Fluidos realizada para medir el coeficiente de arrastre sobre la carrocería.</p>
+            
+            <div class="img-container">
+                <img src="estudio_aerodinamica.png" alt="Análisis Aerodinámico CFD">
+            </div>
+
+            <div class="grid-2">
+                <div class="metric-card">
+                    <h3 style="margin-top: 0;">📊 Coeficiente de Arrastre</h3>
+                    <div class="metric-value">Cd ≈ 0.72</div>
+                    <p style="font-size: 0.85rem; color: var(--text-sub); margin: 0;">Rendimiento aceptable para geometría envolvente de protección.</p>
+                </div>
+                
+                <div class="metric-card">
+                    <h3 style="margin-top: 0;">💡 Puntos de Optimización</h3>
+                    <ul style="font-size: 0.9rem; padding-left: 1.2rem; margin: 0; color: #cbd5e1;">
+                        <li>Redondear aristas frontales para mitigar separación de flujo.</li>
+                        <li>Implementar carenado lateral en ruedas.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: ERGONOMÍA RULA -->
+        <section class="card">
+            <h2>🧘‍♂️ Evaluación Ergonómica del Piloto (RULA)</h2>
+            <p>Análisis de carga postural para el piloto <strong>Fabián Cruz Clemente</strong> (Evaluador: <em>José Emmanuel Martínez Chávez</em>)[cite: 1].</p>
+
+            <div class="grid-2" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); text-align: center;">
+                <div class="metric-card" style="border-left: 4px solid var(--accent);">
+                    <h4 style="margin: 0; color: var(--text-sub);">Puntuación Final</h4>
+                    <div class="metric-value">3</div>
+                    <span class="badge badge-warning">Riesgo Medio</span>[cite: 1]
+                </div>
+
+                <div class="metric-card" style="border-left: 4px solid var(--primary);">
+                    <h4 style="margin: 0; color: var(--text-sub);">Nivel de Actuación</h4>
+                    <div class="metric-value" style="color: var(--primary);">Nivel 2</div>
+                    <span style="font-size: 0.8rem; color: var(--text-sub);">Ajustes recomendados</span>[cite: 1]
+                </div>
+
+                <div class="metric-card" style="border-left: 4px solid #10b981;">
+                    <h4 style="margin: 0; color: var(--text-sub);">Carga Externa</h4>
+                    <div style="font-size: 1.3rem; font-weight: bold; color: #10b981; margin: 0.8rem 0;">&lt; 2 kg</div>
+                    <span style="font-size: 0.8rem; color: var(--text-sub);">Dinámica / Intermitente</span>[cite: 1]
+                </div>
+            </div>
+
+            <div class="grid-2" style="margin-top: 1.5rem;">
+                <div class="metric-card">
+                    <h4 style="color: var(--primary); margin-top: 0;">💪 Grupo A (Brazos y Muñecas)</h4>
+                    <ul style="font-size: 0.85rem; padding-left: 1rem; color: #cbd5e1; margin: 0;">
+                        <li><strong>Brazo:</strong> 2 (Abducido)[cite: 1]</li>
+                        <li><strong>Antebrazo:</strong> 1 (Flexión 60°-100°)[cite: 1]</li>
+                        <li><strong>Muñeca y Giro:</strong> 1 / 1 (Neutro)[cite: 1]</li>
+                    </ul>
+                </div>
+
+                <div class="metric-card">
+                    <h4 style="color: var(--primary); margin-top: 0;">🧍‍♂️ Grupo B (Cuello, Tronco, Piernas)</h4>
+                    <ul style="font-size: 0.85rem; padding-left: 1rem; color: #cbd5e1; margin: 0;">
+                        <li><strong>Tronco:</strong> 3 (Flexión 21°-60°)[cite: 1]</li>
+                        <li><strong>Cuello:</strong> 1 (Flexión 0°-10°)[cite: 1]</li>
+                        <li><strong>Piernas:</strong> 1 (Apoyadas)[cite: 1]</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
     </div>
 
     <footer>
-        <p>Proyecto de Robótica & Embebidos | Desarrollado con ESP32 & Arduino IDE</p>
+        <p>&copy; 2026 Escudería HAWKJIN - Universidad Politécnica Bicentenario</p>
     </footer>
 
 </body>
