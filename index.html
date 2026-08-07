@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corecamóvil - Vehículo RC con ESP-NOW</title>
+    <style>
+        :root {
+            --primary: #0070f3;
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text: #f8fafc;
+            --accent: #22c55e;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e1b4b, #0f172a);
+            padding: 3rem 1rem;
+            text-align: center;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: var(--primary);
+            border-bottom: 1px solid #334155;
+            padding-bottom: 0.5rem;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .badge {
+            background-color: var(--accent);
+            color: #000;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        .code-block {
+            background: #090d16;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: monospace;
+            color: #38edf8;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🏎️ CORECAMÓVIL</h1>
+        <p class="subtitle">Vehículo Robótico Radiocontrolado por Wi-Fi de Baja Latencia (ESP-NOW)</p>
+        <span class="badge">Sistema de Seguridad Fail-Safe Activo</span>
+    </header>
+
+    <div class="container">
+        
+        <section class="card">
+            <h2>📌 Descripción del Proyecto</h2>
+            <p>El <strong>Corecamóvil</strong> es un vehículo todoterreno operado mediante un mando a distancia inalámbrico desarrollado sobre la arquitectura de microcontroladores <strong>ESP32</strong>. Utiliza el protocolo de comunicación peer-to-peer <strong>ESP-NOW</strong> de Espressif, garantizando una respuesta ultrarrápida sin necesidad de un enrutador o red Wi-Fi externa.</p>
+        </section>
+
+        <section class="card">
+            <h2>⚙️ Arquitectura de Hardware</h2>
+            <ul>
+                <li><strong>Control Transmisor (Mando):</strong> ESP32 + Joystick analógico de 2 ejes (X, Y).</li>
+                <li><strong>Receptor (Carro):</strong> ESP32 en modo estación con filtrado de paquetes.</li>
+                <li><strong>Etapa de Potencia:</strong> Configuración de Doble Puente H L298N independiente para balanceo de carga de corriente.</li>
+                <li><strong>Motores:</strong> 4 motores DC accionado por batería de alta potencia de 20V.</li>
+                <li><strong>Indicador Visual:</strong> LED integrado GPIO 2 para diagnóstico de estado de red.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>🛡️ Mecanismo de Seguridad (Fail-Safe)</h2>
+            <p>El vehículo cuenta con un algoritmo de protección ante pérdidas de señal:</p>
+            <div class="code-block">
+                // Timeout de seguridad en milisegundos<br>
+                if (conectado && (millis() - ultimaRecepcion > 1000)) {<br>
+                &nbsp;&nbsp;detenerMotores(); // Detención automática inmediata<br>
+                &nbsp;&nbsp;digitalWrite(LED_CONEXION, LOW);<br>
+                }
+            </div>
+            <p>Si la señal de comunicación con el mando se interrumpe por más de <strong>1 segundo</strong>, el receptor apaga automáticamente la tracción para prevenir colisiones.</p>
+        </section>
+
+        <section class="card">
+            <h2>📶 Protocolo de Comunicación ESP-NOW</h2>
+            <p>A diferencia de los protocolos tradicionalmente usados como Bluetooth o Wi-Fi HTTP, ESP-NOW transmite tramas de datos crudas a nivel MAC, reduciendo la latencia de respuesta del vehículo a menos de <strong>5 milisegundos</strong>.</p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Proyecto de Robótica & Embebidos | Desarrollado con ESP32 & Arduino IDE</p>
+    </footer>
+
+</body>
+</html>
